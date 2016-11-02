@@ -52,6 +52,11 @@ public class Fraction {
      * @param denominator  non-null; value of the denominator
      */
     public Fraction(BigInteger numerator, BigInteger denominator) {
+        if(denominator.signum() < 0){
+            numerator = numerator.negate();
+            denominator = denominator.negate();
+        }
+        
         this.numerator = numerator.divide(getGcd(numerator,denominator));
         this.denominator = denominator.divide(getGcd(numerator,denominator));
     }

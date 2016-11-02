@@ -56,7 +56,7 @@ public class Fraction {
             numerator = numerator.negate();
             denominator = denominator.negate();
         }
-        
+
         this.numerator = numerator.divide(getGcd(numerator,denominator));
         this.denominator = denominator.divide(getGcd(numerator,denominator));
     }
@@ -132,8 +132,8 @@ public class Fraction {
      * @return this / val
      */
     public Fraction divide(Fraction val) {
-        // TODO Auto-generated method stub
-        return null;
+        val = val.invert();
+        return multiply(val);
     }
 
     /**
@@ -152,8 +152,7 @@ public class Fraction {
      * @return 1 / this
      */
     public Fraction invert() {
-        // TODO Auto-generated method stub
-        return null;
+        return new Fraction(denominator,numerator);
     }
 
     /**

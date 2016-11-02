@@ -107,7 +107,7 @@ public class Fraction {
      * @return this - val
      */
     public Fraction subtract(Fraction val) {
-        // TODO Auto-generated method stub
+
         return null;
     }
 
@@ -142,8 +142,10 @@ public class Fraction {
      * @return -this
      */
     public Fraction negate() {
-        // TODO Auto-generated method stub
-        return null;
+        if(signum() < 0){
+            return new Fraction(numerator.multiply(BigInteger.valueOf(-1)), denominator);
+        }
+        return new Fraction(numerator.multiply(BigInteger.valueOf(-1)),denominator) ;
     }
 
     /**
@@ -254,7 +256,11 @@ public class Fraction {
      * @return a normalised String representation of this Fraction
      */
     public String toString() {
-
+        if(numerator.equals(BigInteger.valueOf(0))){
+            return "0";
+        }else if (denominator.equals(BigInteger.valueOf(1))){
+            return numerator.toString();
+        }
         return numerator.toString() + " / " + denominator.toString();
     }
 
@@ -274,7 +280,7 @@ public class Fraction {
      */
     public BigInteger getLcm(BigInteger numerator, BigInteger denominator){
         BigInteger lcm = getGcd(numerator,denominator);
-        return lcm;
+        return (numerator.multiply(denominator)).divide(lcm);
     }
 
 }

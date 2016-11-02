@@ -28,13 +28,14 @@
       <file leaf-file-name="Fraction.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/fractions/Fraction.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="164" column="25" selection-start-line="164" selection-start-column="25" selection-end-line="164" selection-end-column="25" />
+            <state relative-caret-position="216">
+              <caret line="109" column="0" selection-start-line="109" selection-start-column="0" selection-end-line="110" selection-end-column="0" />
               <folding>
                 <element signature="e#893#894#0" expanded="true" />
                 <element signature="e#933#934#0" expanded="true" />
                 <element signature="e#4516#4517#0" expanded="true" />
                 <element signature="e#4574#4575#0" expanded="true" />
+                <element signature="e#4858#4859#0" expanded="true" />
                 <element signature="e#4904#4905#0" expanded="true" />
               </folding>
             </state>
@@ -595,12 +596,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1478091236553</updated>
-      <workItem from="1478091237963" duration="14459000" />
+      <workItem from="1478091237963" duration="14970000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14459000" />
+    <option name="totallyTimeSpent" value="14970000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="740" extended-state="6" />
@@ -665,13 +666,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/fractions/Fraction.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="164" column="25" selection-start-line="164" selection-start-column="25" selection-end-line="164" selection-end-column="25" />
+        <state relative-caret-position="216">
+          <caret line="109" column="0" selection-start-line="109" selection-start-column="0" selection-end-line="110" selection-end-column="0" />
           <folding>
             <element signature="e#893#894#0" expanded="true" />
             <element signature="e#933#934#0" expanded="true" />
             <element signature="e#4516#4517#0" expanded="true" />
             <element signature="e#4574#4575#0" expanded="true" />
+            <element signature="e#4858#4859#0" expanded="true" />
             <element signature="e#4904#4905#0" expanded="true" />
           </folding>
         </state>

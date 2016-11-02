@@ -277,8 +277,10 @@ public class Fraction {
 
 
     /**
-     *
-     *
+     * Finds the greatest common divisor of the fraction
+     *  @param numerator
+     *  @param denominator
+     *  @return a gcd of the fraction
      */
     public BigInteger getGcd(BigInteger numerator, BigInteger denominator){
         BigInteger gcd = numerator.gcd(denominator);

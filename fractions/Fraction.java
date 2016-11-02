@@ -210,11 +210,9 @@ public class Fraction {
      * @return this Fraction taken to the power of exponent
      */
     public Fraction pow(int exponent) {
-        if (exponent == 0){
-            return new Fraction(BigInteger.valueOf(1),BigInteger.ONE);
-        }else if (exponent < 0){
-            return new Fraction(denominator.pow(-exponent),numerator.pow(-exponent));
-        }
+        if (exponent == 0) return new Fraction(BigInteger.valueOf(1),BigInteger.ONE);
+        else if (exponent < 0)  return new Fraction(denominator.pow(-exponent),numerator.pow(-exponent));
+        
         return new Fraction(numerator.pow(exponent), denominator.pow(exponent));
     }
 

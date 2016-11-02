@@ -19,6 +19,10 @@ import java.math.*;
 public class Fraction {
 
     /* Insert your instance variables here. */
+    private BigInteger numerator;
+    private BigInteger denominator;
+    
+
 
     
     /**

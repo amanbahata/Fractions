@@ -176,8 +176,7 @@ public class Fraction {
      * @return the absolute value of this Fraction
      */
     public Fraction abs() {
-        // TODO Auto-generated method stub
-        return null;
+        return new Fraction(numerator.abs(),denominator);
     }
 
     /**

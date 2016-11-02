@@ -163,8 +163,7 @@ public class Fraction {
      *  0 if it is zero, -1 if it is negative) 
      */
     public int signum() {
-        // TODO Auto-generated method stub
-        return 0;
+        return this.numerator.signum();
     }
 
     /**

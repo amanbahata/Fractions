@@ -14,14 +14,14 @@ import java.math.*;
  *
  * @see java.math.BigInteger
  *
- * @author
+ * @author Aman Enghida
  */
 public class Fraction {
 
     /* Insert your instance variables here. */
     private BigInteger numerator;
     private BigInteger denominator;
-    
+
 
 
     
@@ -31,7 +31,7 @@ public class Fraction {
      * @param val  non-null; the value the Fraction is supposed to take
      */
     public Fraction(BigInteger val) {
-        // TODO Auto-generated method stub
+        this(val,BigInteger.ONE);
     }
 
     /**
@@ -40,7 +40,8 @@ public class Fraction {
      * @param val  the value the Fraction is supposed to take
      */
     public Fraction(long val) {
-        // TODO Auto-generated method stub
+        this(BigInteger.valueOf(val),BigInteger.ONE);
+
     }
 
     /**
@@ -51,7 +52,8 @@ public class Fraction {
      * @param denominator  non-null; value of the denominator
      */
     public Fraction(BigInteger numerator, BigInteger denominator) {
-        // TODO Auto-generated method stub
+        this.numerator = numerator.divide(getGcd(numerator,denominator));
+        this.denominator = denominator.divide(getGcd(numerator,denominator));
     }
 
     /**
@@ -62,7 +64,7 @@ public class Fraction {
      * @param denominator  the denominator of the Fraction
      */
     public Fraction(long numerator, long denominator) {
-        // TODO Auto-generated method stub
+        this(BigInteger.valueOf(numerator),BigInteger.valueOf(denominator));
     }
 
     /**
@@ -73,8 +75,12 @@ public class Fraction {
      * @return this + val
      */
     public Fraction add(Fraction val) {
-        // TODO Auto-generated method stub
-        return null;
+        BigInteger num1 = numerator.multiply(val.denominator);
+        BigInteger num2 = denominator.multiply(val.numerator);
+        BigInteger num = num1.add(num2);
+        BigInteger denom = denominator.multiply(val.denominator) ;
+        Fraction sum = new Fraction(num,denom);
+        return sum ;
     }
 
     /**
@@ -108,8 +114,10 @@ public class Fraction {
      * @return this * val
      */
     public Fraction multiply(Fraction val) {
-        // TODO Auto-generated method stub
-        return null;
+        BigInteger num = numerator.multiply(val.numerator);
+        BigInteger denom = denominator.multiply(val.denominator) ;
+        Fraction sum = new Fraction(num,denom);
+        return sum;
     }
 
     /**
@@ -243,7 +251,18 @@ public class Fraction {
      * @return a normalised String representation of this Fraction
      */
     public String toString() {
-        // TODO Auto-generated method stub
-        return null;
+
+        return numerator.toString() + " / " + denominator.toString();
     }
+
+
+    /**
+     *
+     *
+     */
+    public BigInteger getGcd(BigInteger numerator, BigInteger denominator){
+        BigInteger gcd = numerator.gcd(denominator);
+        return gcd;
+    }
+
 }

@@ -96,8 +96,18 @@ public class Fraction {
      *  vals otherwise
      */
     public static Fraction sumAll(Fraction[] fractions) {
-        // TODO Auto-generated method stub
-        return null;
+        if (fractions[0] == null) {
+            return null;
+        }
+        Fraction sumOfAll = new Fraction(fractions[0].numerator,fractions[0].denominator);
+        for (int i = 1; i < fractions.length; i++) {
+            if (fractions[i] == null) {
+                return null;
+            } else {
+                sumOfAll = sumOfAll.add(fractions[i]);
+            }
+        }
+        return sumOfAll;
     }
 
     /**
@@ -212,7 +222,7 @@ public class Fraction {
     public Fraction pow(int exponent) {
         if (exponent == 0) return new Fraction(BigInteger.valueOf(1),BigInteger.ONE);
         else if (exponent < 0)  return new Fraction(denominator.pow(-exponent),numerator.pow(-exponent));
-        
+
         return new Fraction(numerator.pow(exponent), denominator.pow(exponent));
     }
 

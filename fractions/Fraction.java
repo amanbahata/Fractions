@@ -185,8 +185,13 @@ public class Fraction {
      * @return the maximum of this Fraction and val
      */
     public Fraction max(Fraction val) {
-        if (denominator.max(val.denominator) == (val.denominator)){return this;}
-        return val;
+       if (numerator.multiply(val.denominator).compareTo(val.numerator.multiply(denominator)) == 1){
+           return this;
+       }
+       else if (numerator.multiply(val.denominator).compareTo(val.numerator.multiply(denominator)) == -1){
+           return val;
+       }
+       return val;
     }
 
 
@@ -226,8 +231,11 @@ public class Fraction {
      * @see java.math.BigInteger#compareTo(BigInteger)
      */
     public int compareTo(Fraction val) {
-        // TODO Auto-generated method stub
-        return 0;
+        if (this.equals(val)){return 0;}
+        if (this.denominator.compareTo(val.denominator) == 1 && this.numerator.compareTo(val.numerator) == 1){
+            return -1;
+        }
+        return 1;
     }
 
     /**

@@ -1,5 +1,7 @@
 package fractions;
 
+import javafx.scene.shape.FillRule;
+
 import java.math.*;
 
 /**
@@ -31,7 +33,7 @@ public class Fraction {
      * @param val  non-null; the value the Fraction is supposed to take
      */
     public Fraction(BigInteger val) {
-        this(val,BigInteger.ONE);
+        this(val, BigInteger.ONE);
     }
 
     /**
@@ -183,11 +185,11 @@ public class Fraction {
      * @return the maximum of this Fraction and val
      */
     public Fraction max(Fraction val) {
-        if (denominator.compareTo(val.denominator) == 1) {
-            return new Fraction(this.numerator, this.denominator);
-        }
+        if (denominator.max(val.denominator) == (val.denominator)){return this;}
         return val;
     }
+
+
 
     /**
      * Returns the minimum of this Fraction and val.
@@ -196,8 +198,8 @@ public class Fraction {
      * @return the minimum of this Fraction and val
      */
     public Fraction min(Fraction val) {
-        // TODO Auto-generated method stub
-        return null;
+        if (this.max(val).equals(val)){return this;}
+        return val;
     }
 
     /**
@@ -209,7 +211,7 @@ public class Fraction {
      * @return this Fraction taken to the power of exponent
      */
     public Fraction pow(int exponent) {
-        if (exponent == 0) return new Fraction(BigInteger.valueOf(1),BigInteger.ONE);
+        if (exponent == 0) return new Fraction(BigInteger.valueOf(1));
         else if (exponent < 0)  return new Fraction(denominator.pow(-exponent),numerator.pow(-exponent));
 
         return new Fraction(numerator.pow(exponent), denominator.pow(exponent));

@@ -240,8 +240,10 @@ public class Fraction {
      * @see java.math.BigInteger#compareTo(BigInteger)
      */
     public int compareTo(Fraction val) {
-        if (this.equals(val)){return 0;}
-        if (true){
+        if ((numerator.multiply(val.denominator)).compareTo(denominator.multiply(val.numerator)) == 0){
+            return 0;
+        }
+        if (numerator.multiply(val.denominator).compareTo(denominator.multiply(val.numerator)) > 0){
             return 1;
         }
         return -1;

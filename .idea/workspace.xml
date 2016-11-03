@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="59166753-a159-49b8-931b-0593a0dd1cff" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/sp2-cw1-repo-2/fractions/Fraction.class" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fractions/Fraction.java" afterPath="$PROJECT_DIR$/fractions/Fraction.java" />
     </list>
     <ignored path="sp2-cw1-repo-2.iws" />
@@ -29,8 +27,8 @@
       <file leaf-file-name="Fraction.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/fractions/Fraction.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2595">
-              <caret line="57" column="56" selection-start-line="57" selection-start-column="56" selection-end-line="57" selection-end-column="56" />
+            <state relative-caret-position="1650">
+              <caret line="242" column="101" selection-start-line="242" selection-start-column="101" selection-end-line="242" selection-end-column="101" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#930#931#0" expanded="true" />
@@ -609,12 +607,12 @@
       <workItem from="1478117707283" duration="8000" />
       <workItem from="1478117725683" duration="3000" />
       <workItem from="1478117758796" duration="7000" />
-      <workItem from="1478173398610" duration="23696000" />
+      <workItem from="1478173398610" duration="24462000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="46095000" />
+    <option name="totallyTimeSpent" value="46861000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -838,8 +836,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/fractions/Fraction.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2595">
-          <caret line="57" column="56" selection-start-line="57" selection-start-column="56" selection-end-line="57" selection-end-column="56" />
+        <state relative-caret-position="1650">
+          <caret line="242" column="101" selection-start-line="242" selection-start-column="101" selection-end-line="242" selection-end-column="101" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#930#931#0" expanded="true" />

@@ -300,15 +300,4 @@ public class Fraction {
 
         return gcd;
     }
-
-    /**
-     *
-     *
-     */
-    public BigInteger getLcm(BigInteger numerator, BigInteger denominator){
-        BigInteger lcm = getGcd(numerator,denominator);
-
-        return (numerator.multiply(denominator)).divide(lcm);
-    }
-
 }

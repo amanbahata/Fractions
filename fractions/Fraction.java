@@ -1,7 +1,5 @@
 package fractions;
 
-import javafx.scene.shape.FillRule;
-
 import java.math.*;
 
 /**
@@ -118,8 +116,8 @@ public class Fraction {
      * @return this - val
      */
     public Fraction subtract(Fraction val) {
-
-        return null;
+        val = val.abs();
+        return this.add(val.negate());
     }
 
     /**

@@ -39,10 +39,7 @@ public class Fraction {
      *
      * @param val  the value the Fraction is supposed to take
      */
-    public Fraction(long val) {
-        this(BigInteger.valueOf(val),BigInteger.ONE);
-
-    }
+    public Fraction(long val) { this(BigInteger.valueOf(val),BigInteger.ONE);}
 
     /**
      * Constructs a Fraction corresponding to numerator / denominator.
@@ -68,9 +65,7 @@ public class Fraction {
      * @param numerator  the numerator of the Fraction
      * @param denominator  the denominator of the Fraction
      */
-    public Fraction(long numerator, long denominator) {
-        this(BigInteger.valueOf(numerator),BigInteger.valueOf(denominator));
-    }
+    public Fraction(long numerator, long denominator) { this(BigInteger.valueOf(numerator),BigInteger.valueOf(denominator));}
 
     /**
      * Returns a Fraction whose value is (this + val).
@@ -96,18 +91,13 @@ public class Fraction {
      *  vals otherwise
      */
     public static Fraction sumAll(Fraction[] fractions) {
-        if (fractions[0] == null) {
-            return null;
-        }
-        Fraction sumOfAll = new Fraction(fractions[0].numerator,fractions[0].denominator);
+        if (fractions[0] == null) {return null;}
+        Fraction sumOfAllFractions = new Fraction(fractions[0].numerator,fractions[0].denominator);
         for (int i = 1; i < fractions.length; i++) {
-            if (fractions[i] == null) {
-                return null;
-            } else {
-                sumOfAll = sumOfAll.add(fractions[i]);
-            }
+            if (fractions[i] == null) {return null;}
+            else {sumOfAllFractions = sumOfAllFractions.add(fractions[i]);}
         }
-        return sumOfAll;
+        return sumOfAllFractions;
     }
 
     /**
@@ -152,10 +142,7 @@ public class Fraction {
      * @return -this
      */
     public Fraction negate() {
-        if(signum() < 0){
-            return new Fraction(numerator.multiply(BigInteger.valueOf(-1)), denominator);
-        }
-        return new Fraction(numerator.multiply(BigInteger.valueOf(-1)),denominator) ;
+        return new Fraction(numerator.negate(), denominator);
     }
 
     /**
@@ -196,8 +183,10 @@ public class Fraction {
      * @return the maximum of this Fraction and val
      */
     public Fraction max(Fraction val) {
-        // TODO Auto-generated method stub
-        return null;
+        if (denominator.compareTo(val.denominator) == 1) {
+            return new Fraction(this.numerator, this.denominator);
+        }
+        return val;
     }
 
     /**
@@ -284,6 +273,7 @@ public class Fraction {
      */
     public BigInteger getGcd(BigInteger numerator, BigInteger denominator){
         BigInteger gcd = numerator.gcd(denominator);
+
         return gcd;
     }
 
@@ -293,6 +283,7 @@ public class Fraction {
      */
     public BigInteger getLcm(BigInteger numerator, BigInteger denominator){
         BigInteger lcm = getGcd(numerator,denominator);
+
         return (numerator.multiply(denominator)).divide(lcm);
     }
 

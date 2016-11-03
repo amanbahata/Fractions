@@ -55,9 +55,14 @@ public class Fraction {
             numerator = numerator.negate();
             denominator = denominator.negate();
         }
+        if (numerator.compareTo(BigInteger.ZERO) == 0 || denominator.compareTo(BigInteger.ZERO) == 0){
+            this.numerator = BigInteger.ZERO;
+            this.denominator = BigInteger.ONE;
+        }else{
+            this.numerator = numerator.divide(getGcd(numerator,denominator));
+            this.denominator = denominator.divide(getGcd(numerator,denominator));
+        }
 
-        this.numerator = numerator.divide(getGcd(numerator,denominator));
-        this.denominator = denominator.divide(getGcd(numerator,denominator));
     }
 
     /**
@@ -93,7 +98,11 @@ public class Fraction {
      *  vals otherwise
      */
     public static Fraction sumAll(Fraction[] fractions) {
-        if (fractions[0] == null) {return null;}
+        if (fractions[0] == null) {
+            return null;
+        }else if (fractions.length == 0){
+            return new Fraction(0,0);
+        }
         Fraction sumOfAllFractions = new Fraction(fractions[0].numerator,fractions[0].denominator);
         for (int i = 1; i < fractions.length; i++) {
             if (fractions[i] == null) {return null;}
@@ -232,10 +241,10 @@ public class Fraction {
      */
     public int compareTo(Fraction val) {
         if (this.equals(val)){return 0;}
-        if (this.denominator.compareTo(val.denominator) == 1 && this.numerator.compareTo(val.numerator) == 1){
-            return -1;
+        if (true){
+            return 1;
         }
-        return 1;
+        return -1;
     }
 
     /**
@@ -247,7 +256,12 @@ public class Fraction {
      *  false otherwise
      */
     public boolean isEqualTo(Fraction val) {
-        // TODO Auto-generated method stub
+        if (val == null) {
+            return false;
+        }
+        if (this.numerator.equals(val.numerator) && this.denominator.equals(val.denominator)){
+            return true;
+        }
         return false;
     }
 

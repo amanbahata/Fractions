@@ -49,14 +49,16 @@ public class Fraction {
      * @param denominator  non-null; value of the denominator
      */
     public Fraction(BigInteger numerator, BigInteger denominator) {
-        if(denominator.signum() < 0){
+        if(denominator.signum() < 0){             // move the negative sign to the denominator is negative
             numerator = numerator.negate();
             denominator = denominator.negate();
         }
         if (numerator.compareTo(BigInteger.ZERO) == 0 || denominator.compareTo(BigInteger.ZERO) == 0){
+            //for the purposes of this coursework a/0 or 0/b will result in 0
             this.numerator = BigInteger.ZERO;
-            this.denominator = BigInteger.ONE;
+            this.denominator = BigInteger.ZERO;
         }else{
+            // simplify fraction before storing
             this.numerator = numerator.divide(getGcd(numerator,denominator));
             this.denominator = denominator.divide(getGcd(numerator,denominator));
         }
@@ -96,8 +98,10 @@ public class Fraction {
      *  vals otherwise
      */
     public static Fraction sumAll(Fraction[] fractions) {
+        //check the first element of fractions[] is not null
         if (fractions[0] == null) {
             return null;
+        //check fractions[] contains at least one element
         }else if (fractions.length == 0){
             return new Fraction(0,0);
         }
@@ -130,8 +134,7 @@ public class Fraction {
     public Fraction multiply(Fraction val) {
         BigInteger num = numerator.multiply(val.numerator);
         BigInteger denom = denominator.multiply(val.denominator) ;
-        Fraction sum = new Fraction(num,denom);
-        return sum;
+        return new Fraction(num,denom);
     }
 
     /**
@@ -291,8 +294,8 @@ public class Fraction {
 
     /**
      * Finds the greatest common divisor of the fraction
-     *  @param numerator
-     *  @param denominator
+     *  @param numerator numerator of the fraction
+     *  @param denominator denominator of the fraction
      *  @return a gcd of the fraction
      */
     public BigInteger getGcd(BigInteger numerator, BigInteger denominator){
